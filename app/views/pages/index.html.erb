@@ -1,0 +1,40 @@
+<div class="container">
+<!--<h1> <center>Your Tweets</center></h1>
+<hr>-->
+
+	<div class="span5 center">
+	<h2>All tweets</h2>	
+		<div class="well">
+		<table class="table">
+			
+				<tbody>
+
+
+
+
+
+					<% @tweets = @tweets.sort_by{|w| w.created_at} %>	
+
+					<% @tweets.reverse_each do |t| %>
+						<tr>
+							<td>	<img src= <%= t.user.avatar.url(:small) %>
+			class="img-rounded"> 
+
+		</td>
+							<td> <b><%= t.user.username %></b><div class="smaller pull-right"> <%= t.created_at %> </div><br> <%= t.message %><br>
+								
+
+							</td>
+							
+								
+						</tr>
+
+					<% end %>
+
+				</tbody>
+		</table>
+		</div>
+	</div>
+
+</div> <!--ROW -->
+</div> <!--CONTAINER -->

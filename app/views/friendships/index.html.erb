@@ -1,0 +1,33 @@
+
+	<div class="span5 center">
+	<h2> Your friend requests </h2>		
+		<div class="well">
+		<table class="table">
+					
+				<tbody>
+					<% @friendships.each do |t| %>
+						<tr>
+		
+							<td> <b> <%= image_tag t.primary_user.avatar.url(:small) %>
+								
+									<%= t.primary_user.username %>
+
+
+								 </b>
+							
+						<div class="smaller pull-right"> 
+							</td>
+							<td>
+
+								<%= link_to "Approve Request", friendship_agree_path(t.id), :class => "btn btn-small btn-info pull-right" %>
+							  </td>
+							<td><%= link_to "Reject Request", friendship_reject_path(t.id), :class => "btn btn-small btn-danger pull-right" %> 
+</td>
+								
+						</tr>
+
+					<% end %>
+				</tbody>
+		</table>
+		</div>
+	</div>

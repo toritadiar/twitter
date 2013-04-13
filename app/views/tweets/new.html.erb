@@ -1,0 +1,38 @@
+<div class="container">
+<h1> Tweets</h1>
+<hr>
+
+
+<%= render :partial => "form", :locals => { :tweet => @tweet } %>
+
+
+</div>
+
+
+
+<div class="span5">
+	
+	<div class="well">
+	<table class="table">
+			<thead>
+				<tr>
+					<th> Avatar</th>
+					<th> Message </th>
+				</tr>
+			</thead>
+			<tbody>
+				<% @tweets.each do |t| %>
+					<tr>
+						<td> <%= t.message %></td>
+						
+							
+					</tr>
+
+				<% end %>
+			</tbody>
+	</table>
+</div>
+</div>
+
+</div> <!--deleteable -->
+	</div>

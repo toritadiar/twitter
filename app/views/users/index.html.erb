@@ -1,0 +1,27 @@
+
+	<div class="span5 center">
+	<h2> Other Users </h2>	
+		<div class="well">
+		<table class="table">
+			
+				<tbody>
+					<% @users.each do |t| %>
+						<tr>
+							<td>	<img src= <%= t.avatar.url(:small) %>
+			class="img-rounded"> 
+
+		</td>
+							<td> <b><%= t.username %></b><div class="smaller pull-right"> 
+
+
+							</td>
+							<td> <%= link_to "Add Friend", friend_ask_path(t.id), :class => "btn btn-info pull-right" %> </td>
+								
+						</tr>
+
+					<% end %>
+				</tbody>
+		</table>
+		</div>
+
+	</div>
